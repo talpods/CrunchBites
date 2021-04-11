@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrunchBites</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+    <div id="bodypage" class="flex flex-col h-screen justify-between ">
+
+
+        <header id="header" class="bg-browngray ">
+
+            <nav class="flex items-center justify-between py-1 pr-10 pt-2">
+                <div class="flex items-center">
+                    <div>
+                      <a href="index.html"> <img src="img/logo3.png" alt="CrunchBites" class="w-32 h-auto md:w-auto md:h-auto ml-6" /></a> 
+                    </div>
+
+
+                    <div id="nav-content"
+                        class="hidden lg:flex md:flex content-start space-x-6 lg:block md:block p-4 mx-12">
+                        <a href="index.html" class="block text-gray-300 font-semibold hover:bg-browngray-800 hover:text-white px-3 py-2 rounded">Home</a>
+                        <a href="restaurants.html" class="block text-gray-300 font-semibold hover:bg-browngray-800 hover:text-white px-3 py-2  rounded  pr-70">Restaurants</a>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4  ">
+                    <a href="#" class="py-2"> <img src="img/cart.png " alt="Cart"></a>
+                    <a href="dashboard-consumer.html" class=" pr-6 md:pr-6 text-gray-300 font-semibold hover:bg-browngray-800 hover:text-white px-3 py-2 rounded">Saleem</a>
+                    <div class=" block lg:hidden md:hidden pb-2 ">
+                        <button id="nav-toggle" type="button" class="text-white">
+                            <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 17h-12v-2h12v2zm0-4h-12v-2h12v2zm0-4h-12v-2h12v2z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+
+
+            </nav>
+
+
+        </header>
+      
+      
+
+
+
+     
+
+
+
+
+        <div class="grid mx-auto md:w-4/6 p-6 ">
+            <h1 class="pb-4 text-lg text-orangishred-800 font-semibold">Order history</h1>
+            <article class="flex border border-orangishred rounded items-center mb-4">
+                <div class="w-32 "><img src="img/McDonald's-Logo.png" class="w-full " alt=""></div>
+                <div class="flex justify-between items-center w-full pr-6">
+                    <div class=" px-4  border-l border-orangishred">
+                        <h2 class="text-browngray font-bold py-4">McDonald's</h2>
+                        <p class="text-browngray text-xs pb-1">Delivered</p>
+                        <p class="text-browngray text-xs pb-4">Feb 1, 2021 06:00 AM</p>
+                    </div>
+                    <div class="">
+                        <h1 class="text-browngray font-bold">$20.00</h1>
+                    </div>
+                </div>
+            </article>
+
+            <article class="flex border border-orangishred rounded items-center mb-4">
+                <div class="w-32 "><img src="img/al-tazaj-mdiq.png" class="w-full " alt=""></div>
+                <div class="flex justify-between items-center w-full pr-6">
+                    <div class=" px-4  border-l border-orangishred">
+                        <h2 class="text-browngray font-bold py-4">Al Tazaj</h2>
+                        <p class="text-browngray text-xs pb-1">Delivered</p>
+                        <p class="text-browngray text-xs pb-4">Jan 22, 2021 11:55 AM</p>
+                    </div>
+                    <div class="">
+                        <h1 class="text-browngray font-bold">$14.30</h1>
+                    </div>
+                </div>
+            </article>
+
+            <article class="flex border border-orangishred rounded items-center mb-4">
+                <div class="w-32 "><img src="img/McDonald's-Logo.png" class="w-full " alt=""></div>
+                <div class="flex justify-between items-center w-full pr-6">
+                    <div class=" px-4  border-l border-orangishred">
+                        <h2 class="text-browngray font-bold py-4">McDonald's</h2>
+                        <p class="text-browngray text-xs pb-1">Delivered</p>
+                        <p class="text-browngray text-xs pb-4">Jan 17, 2021 05:30 PM</p>
+                    </div>
+                    <div class="">
+                        <h1 class="text-browngray font-bold">$10.35</h1>
+                    </div>
+                </div>
+            </article>
+        </div>
+      
+        <footer class="bg-orangishred opacity p-6 text-beigeyellow text-sm font-semibold">
+            <p>Copyright © CrunchBites 2021</p>
+        </footer>
+    </div>
+
+    <div>
+        <div id="nav-dropdown" class="hidden absolute bg-browngray-200  w-36 h-screen  pt-12 px-3 right-0 top-0 ">
+            <a href="index.html" class=" block text-gray-300 font-semibold hover:bg-browngray hover:text-white px-3 py-4 rounded">Home</a>
+            <a href="restaurants.html" class=" block text-gray-300 font-semibold hover:bg-browngray hover:text-white px-3 py-4  rounded">Restaurants</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
