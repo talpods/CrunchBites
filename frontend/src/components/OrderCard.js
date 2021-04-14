@@ -1,21 +1,51 @@
-import React from 'react'
+import React, { Component } from 'react'
+import OrdersController from '../contollers/OrdersController'
+import {connect} from 'react-redux'
+import {fetchOrders} from '../store/actions'
 
-function OrderCard() {
+class OrderCard extends Component {
+    constructor(props){
+        super(props)
+    }
+    async componentDidMount(){
+        let orders= await OrdersController.get();
+        this.props.fetchOrders(orders);
+
+
+
+      
+    }
+    render(){
+        let orders=this.props.orders.map((order)=>{  
+            
     return (
-        <article class="flex border border-orangishred rounded items-center mb-4">
-        <div class="w-32 "><img src="img/McDonald's-Logo.png" class="w-full " alt=""/></div>
-        <div class="flex justify-between items-center w-full pr-6">
-            <div class=" px-4  border-l border-orangishred">
-                <h2 class="text-browngray font-bold py-4">McDonald's</h2>
-                <p class="text-browngray text-xs pb-1">Delivered</p>
-                <p class="text-browngray text-xs pb-4">Feb 1, 2021 06:00 AM</p>
+        <article key={order.id} class="flex border border-orangishred rounded items-center mb-4">
+        <div className="w-32 "><img src={order.logo_url} class="w-full " alt=""/></div>
+        <div className="flex justify-between items-center w-full pr-6">
+            <div className=" px-4  border-l border-orangishred">
+                <h2 className="text-browngray font-bold py-4">{order.name}</h2>
+                <p className="text-browngray text-xs pb-1">Delivered</p>
+                <p className="text-browngray text-xs pb-4">{order.time}</p>
             </div>
-            <div class="">
-                <h1 class="text-browngray font-bold">$20.00</h1>
+            <div className="">
+                <h1 className="text-browngray font-bold">${order.total_cost}</h1>
             </div>
         </div>
     </article>
     )
+});
+return (
+    <div>
+       {orders}
+             
+      
+</div>
+    )
 }
+}
+const mapStateToProps=({orders})=>{
+    return{orders}
+}
+const mapActionsToProps={fetchOrders};
 
-export default OrderCard
+export default connect(mapStateToProps,mapActionsToProps)(OrderCard);

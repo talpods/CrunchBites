@@ -3,34 +3,18 @@ import Footer from './components/Footer'
 import {HashRouter  as  Router, Route} from 'react-router-dom'
 import Restaurant from './components/Restaurant';
 import React from 'react';
-import axios from 'axios';
-import Photo from './Components/Photo.js';
+
 
 import Orders from './components/Orders';
 import Home from './components/Home';
+import { Menu } from './components/Menu';
 
 class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = { restaurants: [] }
-  }
-
-  componentDidMount() {
-    axios.get('http://localhost:3000/restaurants')
-      .then(res =>{
-        this.setState({restaurants: res.data })
-      });
-  }
 
   
-  render() {
+ render(){
 
-    const restaurants = this.state.restaurants.map(photo => {
-      return <Photo photo={photo}/>
-    });
-
-  function App() {
+ 
  return (
    
      
@@ -41,6 +25,7 @@ class App extends React.Component {
       <Route exact path="/" component={Home}/>
       <Route exact path="/Restaurants" component={Restaurant}/>
       <Route exact path="/Orders" component={Orders}/>
+      <Route exact path="/Menu/:id" component={Menu}/>
       <Footer/>
       </div>
       
@@ -48,6 +33,9 @@ class App extends React.Component {
     
   
   );
+ }
 }
+
+ 
 
 export default App;
