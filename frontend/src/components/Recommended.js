@@ -11,9 +11,9 @@ export default function Recommended() {
                 <h1 className="text-xl text-orangishred-800 tracking-widest font-medium title-font my-2">TOP RESTAURANTS</h1>
             </div>
         <div className="container py-5 pl-12 mx-auto">
-        <div className="flex flex-wrap -m-2 ">
+       
             <RestaurantCard/>
-        </div>
+       
         </div>
         <Link to={'Restaurants'}>
                             <Button type="Light" text="Find more" className="flex justify-center mx-auto w-48 my-8"/>

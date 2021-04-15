@@ -19,15 +19,15 @@ class RestaurantCard extends Component {
     render() {
         let restaurants = this.props.restaurants.map((restaurant) => {
             return (
-                <div key={restaurant.id} className="lg:w-1/4 md:w-1/2 p-4 w-full transform transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110">
+                <div key={restaurant.id} className="mx-auto lg:w-1/4 md:w-1/2 p-4 w-full transform transition duration-500 ease-in-out hover:-translate-y-1 hover:scale-110">
                     <a className="block relative h-48 rounded overflow-hidden">
-                        <img alt="Restaurant" className="object-cover object-center w-4/5 h-4/5 block " src={restaurant.logo_url} />
+                        <img alt="Restaurant" className="object-cover object-center w-3/5 h-auto block " src={restaurant.logo_url} />
                     </a>
                     <div className="mt-2">
                         <h3 className="text-black text-xs tracking-widest title-font mb-1 font-bold ">{restaurant.name}</h3>
                         
                         <Link to={'Menu/'+restaurant.id}>
-                            <Button type="Light" text="Order Now" className="w-32 bg-orangishred-200 "/>
+                            <button  className="  text-white w-32 bg-red-500">Order Now </button>
                         </Link>
 
                     </div>
