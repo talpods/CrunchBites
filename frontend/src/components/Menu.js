@@ -9,6 +9,12 @@ export class Menu extends Component {
 
     constructor(props) {
         super(props)
+        this.state={
+            cart:[],       
+
+            
+        }
+
     }
     async componentDidMount() {
 
@@ -19,7 +25,43 @@ export class Menu extends Component {
 
         let menu = await MenuController.get(id);
         this.props.fetchMenu(menu);
+        console.log(menu)
+      
 
+    }
+    getTotalCost(){
+        let cost=0;
+        let deliveryCost=10;
+        this.state.cart.map(dish=>{
+            cost+=dish.price; 
+          
+        })
+        cost+=deliveryCost;
+        console.log(cost)
+        return cost;
+      
+
+
+    }
+    getSelectedItem(){
+        let item="";
+  
+        this.state.cart.map(dish=>{
+          item=item +","+dish.dish;
+          
+        })
+      
+        return item;
+      
+
+
+    }
+    addToCart(dish){
+      this.setState(cart=>({
+          
+        cart:[...this.state.cart,dish]}
+      ))
+     console.log(dish)
 
     }
    
@@ -36,7 +78,7 @@ export class Menu extends Component {
                         <tr className=" grid grid-cols-3  ">
                             <td className=" border border-red-500 ">{dish.dish}</td>
                             <td className=" border border-red-500 text-right ">{dish.price} $</td>
-                            <td className=" border border-red-500 rounded px-2 py-1 text-center "> <button>+</button> </td>
+                            <td className=" border border-red-500 rounded px-2 py-1 text-center "> <button onClick={()=>this.addToCart(dish)}>+</button> </td>
                         </tr>
 
                     </div>
@@ -58,11 +100,11 @@ export class Menu extends Component {
                             </table>
                         </div>
                         <div class="border p-4 shadow-sm rounded bg-red-100">
-                            <h2 class="font-bold">Selected items</h2>
+                            <h2 class="font-bold">Selected items:{this.getSelectedItem()} </h2>
                             <ul id="cart"></ul>
 
                             <h2 class="font-bold">Delivery Charges $10 </h2>
-                            <h2 class="mt-6 font-bold">Total price</h2>
+                            <h2 class="mt-6 font-bold">{this.getTotalCost()}</h2>
                             <p id="totalPrice"></p>
                         </div>
 

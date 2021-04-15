@@ -16,7 +16,7 @@ function Navbar() {
                      <Link to="/">
                             <Button type="Menu" text="Home"/>
                         </Link>
-                        <Link to={'Restaurants'}>
+                        <Link to={'/Restaurants'}>
                             <Button type="Menu" text="Restaurants"/>
                         </Link>
                         <Link to={'Orders'}>
