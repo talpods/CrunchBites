@@ -7,7 +7,7 @@ import React from 'react';
 
 import Orders from './components/Orders';
 import Home from './components/Home';
-import { Menu } from './components/Menu';
+import  Menu  from './components/Menu';
 
 class App extends React.Component {
 
@@ -25,7 +25,7 @@ class App extends React.Component {
       <Route exact path="/" component={Home}/>
       <Route exact path="/Restaurants" component={Restaurant}/>
       <Route exact path="/Orders" component={Orders}/>
-      <Route exact path="/Menu/:id" component={Menu}/>
+       <Route exact path="/Menu/:id" component={Menu}/>
       <Footer/>
       </div>
       

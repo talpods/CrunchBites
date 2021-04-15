@@ -8,7 +8,8 @@ app.use(cors());
 const photos = require('./data/database.js');
 
 app.get('/restaurants', (req, res) => {
-  database.query('Select * from restaurants',function(error,restaurants){
+ 
+  database.query('Select * from restaurants ',function(error,restaurants){
     res.json(restaurants);
   })
   //res.send(photos);
@@ -20,11 +21,16 @@ app.get('/orders', (req, res) => {
 
 });
 
-app.get('/menu', (req, res) => {
-  database.query('Select i.id, i.restaurant_id, i.price, i.name AS dish,  r.id, r.name AS name ,r.logo_url from items AS i, restaurants as r WHERE i.restaurant_id= r.id',function(error,menu){
+app.get('/menu/:id', (req, res) => {
+  const {id}=req.params;
+  database.query(`Select i.id, i.restaurant_id, i.price, i.name AS dish,  r.id, r.name AS name ,
+  r.logo_url from items AS i, restaurants as r WHERE i.restaurant_id= r.id && i.restaurant_id=?`
+  ,[id] ,function(error,menu){
     res.json(menu);
   })
 
 });
+
+
 
 app.listen(3000, () => {})
