@@ -9,8 +9,8 @@ class Orders extends Component {
     
     return (
         
-        <div class="grid mx-auto md:w-4/6 p-6 ">
-            <h1 class="pb-4 text-lg text-orangishred-800 font-semibold">Order history</h1>
+        <div className="grid mx-auto md:w-4/6 p-6 ">
+            <h1 className="text-xl tracking-widest font-medium title-font my-2 text-orangishred-800 text-center">ORDERS</h1>
           
            <OrderCard/>
     

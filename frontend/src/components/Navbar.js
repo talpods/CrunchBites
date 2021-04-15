@@ -20,7 +20,7 @@ function Navbar() {
                             <Button type="Menu" text="Restaurants"/>
                         </Link>
                         <Link to={'Orders'}>
-                            <Button type="Menu" text="Order History"/>
+                            <Button type="Menu" text="Orders"/>
                         </Link>
                            
                     </div>

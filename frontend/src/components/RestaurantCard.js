@@ -24,10 +24,10 @@ class RestaurantCard extends Component {
                         <img alt="Restaurant" className="object-cover object-center w-4/5 h-4/5 block " src={restaurant.logo_url} />
                     </a>
                     <div className="mt-2">
-                        <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">{restaurant.name}</h3>
+                        <h3 className="text-black text-xs tracking-widest title-font mb-1 font-bold ">{restaurant.name}</h3>
                         
                         <Link to={'Menu/'+restaurant.id}>
-                            <Button type="Dark" text="Order Now"/>
+                            <Button type="Light" text="Order Now" className="w-32 bg-orangishred-200 "/>
                         </Link>
 
                     </div>
